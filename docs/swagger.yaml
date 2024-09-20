@@ -1,0 +1,33 @@
+definitions:
+  entity.Company:
+    properties:
+      cnpj:
+        type: string
+      companyName:
+        type: string
+      fantasyName:
+        type: string
+      id:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /company:
+    get:
+      consumes:
+      - application/json
+      description: Get all companies from the database
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Company'
+            type: array
+      summary: Retrieve all companies
+      tags:
+      - company
+swagger: "2.0"
